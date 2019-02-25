@@ -30,7 +30,13 @@ public class MainTest {
     }
 
     @Test
-    public void enumTest() {
+    public void privateUtilityClassTest() {
+        System.out.println(UtilityClass.makeYYYYMMDD());
+    }
 
+    @Test
+    public void longTolongTimeTest() {
+        TimeTaken.longUsingBad();
+        TimeTaken.longUsingGood();
     }
 }
