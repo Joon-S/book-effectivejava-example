@@ -43,4 +43,22 @@ public class PhoneNumber {
         result = 31 * result + lineNumber;
         return result;
     }
+
+    /**
+     * 형식을 명시해주던지 아니던지간에 문서화는 분명히!
+     * 1. 명시해줄경우
+     * 전화번호를 문자열로 반환하며 XXX 는 지역번호, YYY는 국번...이런식으로
+     * 회선번호가 123일경우 앞에 숫자 0 이 붙는다는둥 특징들을 서술
+     *
+     * 2. 명시해주지않을경우
+     * 정해진 형식은 x 바꿀수있지만 대체로 이러한 문자열로 반환
+     * "[Potion #9: type=love, smell=good ]"~~
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return String.format(" (%03d) %03d-%04d",
+                areaCode, prefix, lineNumber);
+    }
 }

@@ -45,5 +45,7 @@ public class MainTest {
         Map<PhoneNumber, String> m = new HashMap<>();
         m.put(new PhoneNumber(707, 867, 5309),
                 "Jenny");
+        PhoneNumber pn = new PhoneNumber(707, 867, 5309);
+        System.out.println(pn.toString());
     }
 }
