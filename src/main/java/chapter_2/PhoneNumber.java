@@ -1,6 +1,6 @@
 package chapter_2;
 
-public class PhoneNumber {
+public class PhoneNumber implements Comparable<PhoneNumber> {
     private short areaCode;
     private short prefix;
     private short lineNumber;
@@ -60,5 +60,38 @@ public class PhoneNumber {
     public String toString() {
         return String.format(" (%03d) %03d-%04d",
                 areaCode, prefix, lineNumber);
+    }
+
+    //개선전
+//    @Override
+//    public int compareTo(PhoneNumber pn) {
+//        if(areaCode < pn.areaCode)
+//            return -1;
+//        if(areaCode > pn.areaCode)
+//            return 1;
+//        if(prefix < pn.prefix)
+//            return -1;
+//        if(prefix > pn.prefix)
+//            return 1;
+//        if(lineNumber < pn.lineNumber)
+//            return -1;
+//        if(lineNumber > pn.lineNumber)
+//            return 1;
+//
+//        return 0;
+//    }
+
+    //성능개선 다만 음수와 양수가 확실치않으니 주의를 갖고 사용할 필요가 있음
+    @Override
+    public int compareTo(PhoneNumber pn) {
+        int areaCodeDiff = areaCode - pn.areaCode;
+        if(areaCodeDiff != 0)
+            return areaCodeDiff;
+
+        int prefixDiff = prefix - pn.prefix;
+        if(prefixDiff != 0)
+            return prefixDiff;
+
+        return lineNumber - pn.lineNumber;
     }
 }

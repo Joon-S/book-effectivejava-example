@@ -48,4 +48,13 @@ public class MainTest {
         PhoneNumber pn = new PhoneNumber(707, 867, 5309);
         System.out.println(pn.toString());
     }
+
+    @Test
+    public void phoneNumberCompareToTest() {
+        PhoneNumber pn1 = new PhoneNumber(100, 200, 300);
+        PhoneNumber pn2 = new PhoneNumber(101,201,301);
+        PhoneNumber pn3 = new PhoneNumber(100, 201, 300);
+
+        assertEquals(-1, pn1.compareTo(pn2));
+    }
 }
