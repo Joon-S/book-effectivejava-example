@@ -26,4 +26,11 @@ public class MainTest {
     public void physicalConstantsTest() {
         assertTrue(6.1 == AVOGADROS_NUMBER);
     }
+
+    @Test
+    public void HostAndStringLengthComparatorTest() {
+        StringLengthComparatorV2 strLenV2 = new StringLengthComparatorV2();
+        assertTrue(0 == strLenV2.compare("0", "0"));
+        assertTrue(0 == Host.STRING_LENGTH_COMPARATOR.compare("123", "123"));
+    }
 }
