@@ -1,5 +1,6 @@
 package chapter_3;
 
+import chapter_4.Stack;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -32,5 +33,15 @@ public class MainTest {
         StringLengthComparatorV2 strLenV2 = new StringLengthComparatorV2();
         assertTrue(0 == strLenV2.compare("0", "0"));
         assertTrue(0 == Host.STRING_LENGTH_COMPARATOR.compare("123", "123"));
+    }
+
+    @Test
+    public void StackGenericTest() {
+        String[] args = {"Hello", "New", "World"};
+        Stack<String> stack = new Stack<String>();
+        for(String arg : args)
+            stack.push(arg);
+        while(!stack.isEmpty())
+            System.out.println(stack.pop().toUpperCase());
     }
 }
