@@ -1,7 +1,10 @@
 package chapter_3;
 
 import chapter_4.Stack;
+import chapter_4.UnionWithGeneric;
 import org.junit.Test;
+
+import java.util.*;
 
 import static org.junit.Assert.*;
 //if you don't use class full name then use it :)
@@ -43,5 +46,19 @@ public class MainTest {
             stack.push(arg);
         while(!stack.isEmpty())
             System.out.println(stack.pop().toUpperCase());
+    }
+
+    @Test
+    public void unionWithGenericTest() {
+        Set<String> guys = new HashSet<String>(
+                Arrays.asList("Tom", "Dick", "Harry")
+        );
+        Set<String> stooges = new HashSet<String>(
+                Arrays.asList("Larry", "Moe", "Curly")
+        );
+        Set<String> aflCio = UnionWithGeneric.unionUpdate(guys, stooges);
+        System.out.println(aflCio);
+
+        Map<String, List<String>> anagrams = UnionWithGeneric.newHashMap();
     }
 }
