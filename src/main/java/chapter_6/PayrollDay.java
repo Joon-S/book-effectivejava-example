@@ -1,5 +1,8 @@
 package chapter_6;
 
+/**
+ * 테스트필요
+ */
 public enum PayrollDay {
     MONDAY(PayType.WEEKDAY), TUESDAY(PayType.WEEKDAY),
     WEDNESDAY(PayType.WEEKDAY), THURSDAY(PayType.WEEKDAY),
