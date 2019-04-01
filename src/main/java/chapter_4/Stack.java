@@ -1,6 +1,7 @@
 package chapter_4;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.EmptyStackException;
 
 /**
@@ -39,5 +40,29 @@ public class Stack<E> {
     private void ensureCapacity() {
         if ( elements.length == size)
             elements = Arrays.copyOf(elements, 2 * size + 1);
+    }
+
+    //bad
+    public void pushAllBad(Iterable<E> src) {
+        for(E e: src)
+            push(e);
+    }
+
+    //Good
+    public void pushAll(Iterable<? extends E> src) {
+        for(E e: src)
+            push(e);
+    }
+
+    //Bad
+    public void popAllBad(Collection<E> dst) {
+        while(!isEmpty())
+            dst.add(pop());
+    }
+
+    //Good
+    public void popAll(Collection<? super E> dst) {
+        while(!isEmpty())
+            dst.add(pop());
     }
 }
