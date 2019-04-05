@@ -1,6 +1,7 @@
 package chapter_6;
 
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class PlanetTest {
 
@@ -24,5 +25,12 @@ public class PlanetTest {
 
     @Test
     public void payrollDayTest() {
+
+    }
+
+    @Test
+    public void ensembleTest() {
+        assertEquals(1, Ensemble.SOLO.numberOfMusicians());//Good
+        assertNotEquals(2, Ensemble.DUET.ordinal());//Bad
     }
 }
