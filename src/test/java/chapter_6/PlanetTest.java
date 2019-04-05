@@ -1,6 +1,9 @@
 package chapter_6;
 
 import org.junit.Test;
+
+import java.util.EnumSet;
+
 import static org.junit.Assert.*;
 
 public class PlanetTest {
@@ -32,5 +35,11 @@ public class PlanetTest {
     public void ensembleTest() {
         assertEquals(1, Ensemble.SOLO.numberOfMusicians());//Good
         assertNotEquals(2, Ensemble.DUET.ordinal());//Bad
+    }
+
+    @Test
+    public void TextTest() {
+        Text text = new Text();
+        text.applyStyles(EnumSet.of(Text.Style.BOLD, Text.Style.ITALIC));
     }
 }
