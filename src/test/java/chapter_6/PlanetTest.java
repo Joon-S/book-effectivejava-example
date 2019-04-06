@@ -47,4 +47,10 @@ public class PlanetTest {
     public void PhaseTest() {
         Phase.Transition.from(Phase.SOLID, Phase.SOLID);
     }
+
+    @Test
+    public void SampleTest() {
+        Sample.m1();
+        Sample.m2();
+    }
 }
