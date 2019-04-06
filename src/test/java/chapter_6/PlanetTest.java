@@ -42,4 +42,9 @@ public class PlanetTest {
         Text text = new Text();
         text.applyStyles(EnumSet.of(Text.Style.BOLD, Text.Style.ITALIC));
     }
+
+    @Test
+    public void PhaseTest() {
+        Phase.Transition.from(Phase.SOLID, Phase.SOLID);
+    }
 }
