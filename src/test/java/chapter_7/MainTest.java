@@ -31,4 +31,10 @@ public class MainTest {
         System.out.println("Bad -> " + bad.toString());
         System.out.println("Good -> " + good.toString());
     }
+
+    @Test
+    public void ThermometerTest() {
+        Thermometer momether = Thermometer.newInstance(
+                Thermometer.TemperatureScale.CELSTUS);
+    }
 }
