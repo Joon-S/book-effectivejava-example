@@ -48,4 +48,10 @@ public class MainTest {
         for(Collection<?> c : collections)
             System.out.println(CollectionClassifier.classify(c));
     }
+
+    @Test
+    public void UseVaragsTest() {
+        System.out.println(UseVarargs.sumBad(1, 2, 3, 4, 5, 6));
+        System.out.println(UseVarargs.min(1, 2, 3, 4, 5));
+    }
 }
