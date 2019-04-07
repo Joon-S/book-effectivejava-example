@@ -3,7 +3,7 @@ package chapter_7;
 import org.junit.Test;
 
 import java.math.BigInteger;
-import java.util.Date;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -36,5 +36,16 @@ public class MainTest {
     public void ThermometerTest() {
         Thermometer momether = Thermometer.newInstance(
                 Thermometer.TemperatureScale.CELSTUS);
+    }
+
+    @Test
+    public void CollectionTest() {
+        Collection<?>[] collections = {
+                new HashSet<String>(),
+                new ArrayList<BigInteger>(),
+                new HashMap<String, String>().values()
+        };
+        for(Collection<?> c : collections)
+            System.out.println(CollectionClassifier.classify(c));
     }
 }
