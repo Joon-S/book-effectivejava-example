@@ -54,4 +54,11 @@ public class MainTest {
         System.out.println(UseVarargs.sumBad(1, 2, 3, 4, 5, 6));
         System.out.println(UseVarargs.min(1, 2, 3, 4, 5));
     }
+
+    @Test
+    public void CheeseShopTest() {
+        CheeseShop shop = new CheeseShop();
+        assertNotNull(shop.getCheesesBad());
+        assertNotNull(shop.getCheesesGood());
+    }
 }

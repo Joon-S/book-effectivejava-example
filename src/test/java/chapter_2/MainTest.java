@@ -1,6 +1,5 @@
 package chapter_2;
 
-import javafx.scene.control.ColorPicker;
 import org.junit.Test;
 
 import java.awt.*;
